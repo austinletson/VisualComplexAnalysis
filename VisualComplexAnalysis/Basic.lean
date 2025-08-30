@@ -22,6 +22,7 @@ example (z : ℂ) : Complex.re z = (1 /2) * (z + conj z) := Complex.ext_iff.mpr 
 
 example : Complex.exp (z * I) = Complex.cos z + Complex.sin z * I := by exact Complex.exp_mul_I z
 
+-- Theorem 1.11
 example : deriv (fun z => Complex.exp (I * z)) z  = I * Complex.exp (I * z) := by 
   rw [deriv_cexp]
   have fun_mul : HMul.hMul I =  (fun y => I * id y) := rfl
